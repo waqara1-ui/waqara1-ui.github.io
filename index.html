@@ -5,456 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Amina Waqar</title>
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400;1,600&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&display=swap" rel="stylesheet">
-<style>
-*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-html { scroll-behavior: smooth; }
-
-:root {
-  --cream:    #F8F6F2;
-  --white:    #FFFFFF;
-  --ink:      #1C1C1A;
-  --ink-soft: #4A4A46;
-  --ink-mute: #9A9A94;
-  --sage:     #4A6741;
-  --sage-lt:  #6B8F61;
-  --rule:     #DDD9D0;
-  --serif:    'Playfair Display', Georgia, serif;
-  --sans:     'DM Sans', system-ui, sans-serif;
-}
-
-body {
-  background: var(--cream);
-  color: var(--ink);
-  font-family: var(--sans);
-  font-size: 16px;
-  line-height: 1.65;
-  -webkit-font-smoothing: antialiased;
-}
-
-a { color: inherit; text-decoration: none; }
-
-/* ── NAV ── */
-nav {
-  position: fixed; top: 0; left: 0; right: 0; z-index: 100;
-  background: rgba(248,246,242,0.92);
-  backdrop-filter: blur(10px);
-  border-bottom: 1px solid var(--rule);
-  display: flex; align-items: center; justify-content: space-between;
-  padding: 0 5%;
-  height: 60px;
-}
-.nav-logo {
-  font-family: var(--serif);
-  font-size: 1.1rem; font-weight: 600;
-  letter-spacing: 0.01em;
-  color: var(--ink);
-}
-.nav-links {
-  display: flex; gap: 2.5rem; list-style: none;
-}
-.nav-links a {
-  font-size: 0.82rem; letter-spacing: 0.08em;
-  text-transform: uppercase; font-weight: 500;
-  color: var(--ink-soft);
-  transition: color 0.2s;
-}
-.nav-links a:hover { color: var(--sage); }
-.nav-cta {
-  font-size: 0.82rem; letter-spacing: 0.08em;
-  text-transform: uppercase; font-weight: 500;
-  color: var(--ink);
-  border: 1px solid var(--ink);
-  padding: 0.4rem 1.2rem;
-  transition: background 0.2s, color 0.2s;
-}
-.nav-cta:hover { background: var(--ink); color: var(--cream); }
-
-/* ── TICKER ── */
-.ticker-wrap {
-  margin-top: 60px;
-  background: var(--sage);
-  overflow: hidden;
-  height: 38px;
-  display: flex; align-items: center;
-}
-.ticker-track {
-  display: flex;
-  white-space: nowrap;
-  width: 100%;
-  justify-content: space-between;
-  padding: 0 3%;
-}
-.ticker-track span {
-  font-size: 0.72rem; letter-spacing: 0.18em;
-  text-transform: uppercase; font-weight: 500;
-  color: rgba(255,255,255,0.9);
-  padding: 0 1rem;
-}
-.ticker-track span::before {
-  content: '◆';
-  margin-right: 1rem;
-  opacity: 0.5;
-}
-
-/* ── HERO ── */
-#hero {
-  padding: 7rem 5% 5rem;
-  border-bottom: 1px solid var(--rule);
-  display: grid;
-  grid-template-columns: 1fr 340px;
-  gap: 4rem;
-  align-items: end;
-  max-width: 1300px;
-  margin: 0 auto;
-}
-.hero-left { }
-.hero-eyebrow {
-  font-size: 0.75rem; letter-spacing: 0.2em;
-  text-transform: uppercase; font-weight: 500;
-  color: var(--sage); margin-bottom: 1.6rem;
-}
-.hero-name {
-  font-family: var(--serif);
-  font-size: clamp(4.5rem, 10vw, 9rem);
-  font-weight: 700; line-height: 0.92;
-  letter-spacing: -0.02em;
-  color: var(--ink);
-}
-.hero-name em {
-  font-style: italic;
-  color: var(--sage);
-}
-.hero-right {
-  padding-bottom: 0.5rem;
-}
-.hero-bio {
-  font-size: 1.05rem; line-height: 1.75;
-  color: var(--ink-soft);
-  margin-bottom: 2rem;
-  font-weight: 300;
-}
-.hero-bio strong { color: var(--ink); font-weight: 500; }
-.hero-actions { display: flex; gap: 1rem; flex-wrap: wrap; }
-.btn {
-  display: inline-block;
-  padding: 0.65rem 1.6rem;
-  font-size: 0.82rem; font-weight: 500;
-  letter-spacing: 0.06em; text-transform: uppercase;
-  transition: all 0.2s;
-  font-family: var(--sans);
-  cursor: pointer; border: none;
-}
-.btn-dark {
-  background: var(--ink); color: var(--cream);
-}
-.btn-dark:hover { background: var(--sage); }
-.btn-ghost {
-  background: transparent; color: var(--ink);
-  border: 1px solid var(--ink);
-}
-.btn-ghost:hover { background: var(--ink); color: var(--cream); }
-
-/* ── INTRO STRIP ── */
-.intro-strip {
-  border-bottom: 1px solid var(--rule);
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  max-width: 1300px; margin: 0 auto;
-}
-.intro-item {
-  padding: 2.5rem 5% 2.5rem;
-  border-right: 1px solid var(--rule);
-}
-.intro-item:last-child { border-right: none; }
-.intro-item-label {
-  font-size: 0.7rem; letter-spacing: 0.16em;
-  text-transform: uppercase; color: var(--ink-mute);
-  font-weight: 500; margin-bottom: 0.5rem;
-}
-.intro-item-value {
-  font-family: var(--serif);
-  font-size: 1.1rem; font-weight: 600;
-  color: var(--ink); line-height: 1.3;
-}
-
-/* ── GENERAL SECTION ── */
-.section {
-  max-width: 1300px; margin: 0 auto;
-  padding: 6rem 5%;
-  border-bottom: 1px solid var(--rule);
-}
-.section-header {
-  display: flex; align-items: baseline;
-  gap: 1.5rem; margin-bottom: 4rem;
-}
-.section-num {
-  font-size: 0.7rem; letter-spacing: 0.18em;
-  text-transform: uppercase; color: var(--ink-mute);
-  font-weight: 500; padding-top: 0.25rem;
-}
-.section-title {
-  font-family: var(--serif);
-  font-size: clamp(2rem, 4vw, 3.2rem);
-  font-weight: 600; line-height: 1.1;
-  color: var(--ink);
-}
-.section-title em { font-style: italic; color: var(--sage); }
-
-/* ── ABOUT ── */
-.about-body {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 6rem;
-  align-items: start;
-}
-.about-text p {
-  font-size: 1.1rem; line-height: 1.8;
-  color: var(--ink-soft); margin-bottom: 1.4rem;
-  font-weight: 300;
-}
-.about-text p strong { color: var(--ink); font-weight: 500; }
-.about-callout {
-  font-family: var(--serif);
-  font-size: 1.6rem; font-weight: 400; font-style: italic;
-  line-height: 1.4; color: var(--ink);
-  border-left: 3px solid var(--sage);
-  padding-left: 1.8rem;
-  margin: 2rem 0;
-}
-.about-facts { }
-.fact-row {
-  display: flex; justify-content: space-between;
-  align-items: baseline;
-  padding: 1.2rem 0;
-  border-bottom: 1px solid var(--rule);
-}
-.fact-row:first-child { border-top: 1px solid var(--rule); }
-.fact-label {
-  font-size: 0.78rem; letter-spacing: 0.1em;
-  text-transform: uppercase; color: var(--ink-mute);
-  font-weight: 500;
-}
-.fact-value {
-  font-family: var(--serif);
-  font-size: 1rem; font-weight: 600;
-  text-align: right; max-width: 60%;
-}
-
-/* ── SKILLS ── */
-.skills-body {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 0;
-}
-.skill-row {
-  display: grid;
-  grid-template-columns: 180px 1fr;
-  align-items: start;
-  padding: 2rem 0;
-  border-bottom: 1px solid var(--rule);
-  gap: 2rem;
-  grid-column: 1 / -1;
-}
-.skill-row:first-child { border-top: 1px solid var(--rule); }
-.skill-cat {
-  font-size: 0.75rem; letter-spacing: 0.12em;
-  text-transform: uppercase; color: var(--ink-mute);
-  font-weight: 500; padding-top: 0.1rem;
-}
-.skill-items {
-  display: flex; flex-wrap: wrap; gap: 0.6rem;
-}
-.skill-pill {
-  display: inline-block;
-  padding: 0.3rem 0.9rem;
-  background: var(--white);
-  border: 1px solid var(--rule);
-  font-size: 0.85rem; font-weight: 400;
-  color: var(--ink-soft);
-  transition: border-color 0.2s, color 0.2s;
-}
-.skill-pill:hover { border-color: var(--sage); color: var(--sage); }
-
-/* ── EXPERIENCE ── */
-.exp-list { }
-.exp-item {
-  display: grid;
-  grid-template-columns: 220px 1fr;
-  gap: 3rem;
-  padding: 3rem 0;
-  border-bottom: 1px solid var(--rule);
-  align-items: start;
-}
-.exp-item:first-child { border-top: 1px solid var(--rule); }
-.exp-meta { }
-.exp-date {
-  font-size: 0.75rem; letter-spacing: 0.1em;
-  text-transform: uppercase; color: var(--sage);
-  font-weight: 500; margin-bottom: 0.6rem;
-}
-.exp-org {
-  font-family: var(--serif);
-  font-size: 1.05rem; font-weight: 600;
-  line-height: 1.3; color: var(--ink);
-  margin-bottom: 0.3rem;
-}
-.exp-type {
-  font-size: 0.82rem; color: var(--ink-mute);
-  font-style: italic;
-}
-.exp-role {
-  font-family: var(--serif);
-  font-size: 1.5rem; font-weight: 600;
-  margin-bottom: 1rem; color: var(--ink);
-}
-.exp-bullets { list-style: none; }
-.exp-bullets li {
-  font-size: 0.95rem; color: var(--ink-soft);
-  padding: 0.45rem 0 0.45rem 1.5rem;
-  position: relative; line-height: 1.6;
-  border-bottom: 1px solid var(--rule);
-  font-weight: 300;
-}
-.exp-bullets li:last-child { border-bottom: none; }
-.exp-bullets li::before {
-  content: '';
-  position: absolute; left: 0; top: 50%;
-  width: 6px; height: 1px;
-  background: var(--sage);
-}
-
-/* ── PROJECTS ── */
-.projects-grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 0;
-  border-top: 1px solid var(--rule);
-}
-.project-card {
-  padding: 3rem;
-  border-right: 1px solid var(--rule);
-  border-bottom: 1px solid var(--rule);
-  transition: background 0.2s;
-}
-.project-card:last-child { border-right: none; }
-.project-card:hover { background: var(--white); }
-.project-badge {
-  display: inline-block;
-  font-size: 0.68rem; letter-spacing: 0.15em;
-  text-transform: uppercase; font-weight: 600;
-  color: var(--sage);
-  margin-bottom: 1.2rem;
-}
-.project-title {
-  font-family: var(--serif);
-  font-size: 1.45rem; font-weight: 600;
-  line-height: 1.25; color: var(--ink);
-  margin-bottom: 1rem;
-}
-.project-tech {
-  display: flex; flex-wrap: wrap; gap: 0.4rem;
-  margin-bottom: 1.2rem;
-}
-.tech-tag {
-  font-size: 0.72rem; letter-spacing: 0.08em;
-  font-weight: 500; text-transform: uppercase;
-  color: var(--ink-mute);
-  border-bottom: 1px solid var(--rule);
-  padding-bottom: 1px;
-}
-.project-desc {
-  font-size: 0.93rem; line-height: 1.7;
-  color: var(--ink-soft); font-weight: 300;
-  margin-bottom: 1.5rem;
-}
-.project-link {
-  font-size: 0.78rem; letter-spacing: 0.1em;
-  text-transform: uppercase; font-weight: 600;
-  color: var(--sage);
-  display: inline-flex; align-items: center; gap: 0.4rem;
-  border-bottom: 1px solid var(--sage);
-  padding-bottom: 1px;
-  transition: opacity 0.2s;
-}
-.project-link:hover { opacity: 0.65; }
-
-/* ── CONTACT ── */
-#contact { border-bottom: none; }
-.contact-body {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 6rem;
-  align-items: center;
-}
-.contact-headline {
-  font-family: var(--serif);
-  font-size: clamp(2.5rem, 5vw, 4.5rem);
-  font-weight: 700; line-height: 1.05;
-  letter-spacing: -0.01em;
-}
-.contact-headline em { font-style: italic; color: var(--sage); }
-.contact-right p {
-  font-size: 1rem; color: var(--ink-soft);
-  font-weight: 300; margin-bottom: 2.5rem;
-  line-height: 1.75;
-}
-.contact-list { list-style: none; }
-.contact-list li {
-  border-bottom: 1px solid var(--rule);
-}
-.contact-list li:first-child { border-top: 1px solid var(--rule); }
-.contact-list a {
-  display: flex; justify-content: space-between; align-items: center;
-  padding: 1rem 0;
-  font-size: 0.95rem; font-weight: 500;
-  color: var(--ink);
-  transition: color 0.2s, padding-left 0.2s;
-}
-.contact-list a:hover { color: var(--sage); padding-left: 0.5rem; }
-.contact-list .link-label { font-size: 0.75rem; color: var(--ink-mute); }
-
-/* ── FOOTER ── */
-footer {
-  border-top: 1px solid var(--rule);
-  padding: 1.8rem 5%;
-  display: flex; justify-content: space-between; align-items: center;
-  max-width: 1300px; margin: 0 auto;
-}
-.footer-name {
-  font-family: var(--serif);
-  font-size: 0.95rem; font-style: italic;
-  color: var(--ink-mute);
-}
-.footer-note {
-  font-size: 0.78rem; color: var(--ink-mute);
-}
-
-/* ── REVEAL ── */
-.reveal {
-  opacity: 0; transform: translateY(20px);
-  transition: opacity 0.65s ease, transform 0.65s ease;
-}
-.reveal.visible { opacity: 1; transform: none; }
-
-/* ── RESPONSIVE ── */
-@media (max-width: 900px) {
-  #hero { grid-template-columns: 1fr; }
-  .hero-right { padding-top: 2rem; }
-  .intro-strip { grid-template-columns: 1fr 1fr; }
-  .intro-item:nth-child(2) { border-right: none; }
-  .about-body,
-  .contact-body { grid-template-columns: 1fr; gap: 3rem; }
-  .exp-item { grid-template-columns: 1fr; gap: 1rem; }
-  .projects-grid { grid-template-columns: 1fr; }
-  .project-card { border-right: none; padding-right: 0; }
-}
-@media (max-width: 600px) {
-  .nav-links { display: none; }
-  .hero-name { font-size: 3.8rem; }
-  .intro-strip { grid-template-columns: 1fr; }
-  .intro-item { border-right: none; }
-}
-</style>
+<link rel="stylesheet" href="css/style.css">
 </head>
 <body>
 
@@ -477,7 +28,7 @@ footer {
     <span>AI Fellow At Cornell Tech</span>
     <span>Hackathon Winner</span>
     <span>UC Irvine Computer Science 2027</span>
-    <span>Machine Learning</span>
+    <span>AI · Machine Learning · HCI</span>
     <span>Python · C++ · SQL</span>
     <span>Intelligence Systems</span>
   </div>
@@ -491,7 +42,7 @@ footer {
   </div>
   <div class="hero-right reveal">
     <p class="hero-bio">
-      I'm a Computer Science student at UCI with a passion for building things that actually matter. From machine learning and AI to product thinking and data, I'm drawn to work that sits at the intersection of technology and real human problems. Currently an <strong>AI Fellow at Cornell Tech's Break Through Tech</strong>, selected from 4,000+ applicants.
+      I'm a Computer Science student at UCI specializing in Intelligence Systems, interested in building technology that solves real human problems. My experience spans machine learning, AI, data analysis, software development, and human-centered computing. Currently an <strong>AI Fellow at Cornell Tech's Break Through Tech</strong>, selected from 4,000+ applicants.
     </p>
     <div class="hero-actions">
       <a href="#projects" class="btn btn-dark">View Projects</a>
@@ -516,8 +67,8 @@ footer {
     <div class="intro-item-value">Sunstone × UCI Medical AI Challenge - First Place</div>
   </div>
   <div class="intro-item reveal">
-    <div class="intro-item-label">Specialization</div>
-    <div class="intro-item-value">Intelligence Systems &amp; Machine Learning</div>
+    <div class="intro-item-label">Interests</div>
+    <div class="intro-item-value">AI · Machine Learning · Accessibility</div>
   </div>
 </div>
 
@@ -530,8 +81,8 @@ footer {
   <div class="about-body">
     <div class="about-text reveal">
       <p>I'm a Computer Science student at <strong>UC Irvine</strong> specializing in Intelligence Systems, with a foundation in machine learning, data analysis, and software engineering. I enjoy working across all layers of a problem: writing clean code and thinking through the bigger picture of how technology serves people.</p>
-      <p>I'm drawn to roles where technical skills and strategic thinking overlap, whether that's building a model, analyzing a system, or shaping how a product comes together. I bring curiosity, adaptability, and a genuine interest in understanding problems before jumping to solutions.</p>
-      <p>Outside of coursework, I've spent time as a STEM Navigator supporting underrepresented students in tech, because access to the field matters as much as what you do once you're in it.</p>
+      <p>I'm especially interested in work where technical problem-solving and human-centered thinking overlap, whether that's training and evaluating a machine learning model, analyzing data, building software, or researching how people interact with technology.</p>
+      <p>Outside of coursework, I've explored accessibility through the ReadWithUs research project and supported students as a STEM Navigator. These experiences have made me especially interested in building technology that is not only technically strong, but genuinely useful and accessible to the people using it.</p>
     </div>
     <div class="about-facts reveal">
       <div class="fact-row">
@@ -572,39 +123,44 @@ footer {
     <div class="skill-row">
       <span class="skill-cat">Languages</span>
       <div class="skill-items">
-        <span class="skill-pill">C++</span>
         <span class="skill-pill">Python</span>
-        <span class="skill-pill">R</span>
         <span class="skill-pill">SQL</span>
+        <span class="skill-pill">C++</span>
         <span class="skill-pill">HTML</span>
+        <span class="skill-pill">CSS</span>
       </div>
     </div>
     <div class="skill-row">
-      <span class="skill-cat">Libraries &amp; Frameworks</span>
+      <span class="skill-cat">AI &amp; ML</span>
       <div class="skill-items">
+        <span class="skill-pill">Machine Learning</span>
+        <span class="skill-pill">RAG</span>
+        <span class="skill-pill">Information Retrieval</span>
         <span class="skill-pill">Pandas</span>
         <span class="skill-pill">NumPy</span>
         <span class="skill-pill">Scikit-learn</span>
-        <span class="skill-pill">Seaborn</span>
+        <span class="skill-pill">Vector Embeddings</span>
       </div>
     </div>
     <div class="skill-row">
-      <span class="skill-cat">Tools &amp; Platforms</span>
+      <span class="skill-cat">Development</span>
       <div class="skill-items">
+        <span class="skill-pill">FastAPI</span>
+        <span class="skill-pill">SQLAlchemy</span>
+        <span class="skill-pill">SQLite</span>
+        <span class="skill-pill">Docker</span>
         <span class="skill-pill">Git</span>
         <span class="skill-pill">GitHub</span>
-        <span class="skill-pill">Figma</span>
+        <span class="skill-pill">Jupyter Notebook</span>
       </div>
     </div>
     <div class="skill-row">
-      <span class="skill-cat">Professional</span>
+      <span class="skill-cat">Web &amp; Research</span>
       <div class="skill-items">
-        <span class="skill-pill">Communication</span>
-        <span class="skill-pill">Team Collaboration</span>
-        <span class="skill-pill">Event Planning</span>
-        <span class="skill-pill">Problem Solving</span>
-        <span class="skill-pill">Coordination</span>
-        <span class="skill-pill">Organization</span>
+        <span class="skill-pill">Web Development</span>
+        <span class="skill-pill">Human-Computer Interaction</span>
+        <span class="skill-pill">Accessibility</span>
+        <span class="skill-pill">Data Analysis</span>
       </div>
     </div>
   </div>
@@ -627,7 +183,22 @@ footer {
       <div>
         <div class="exp-role">AI Fellow</div>
         <ul class="exp-bullets">
-          <li>Selected from 4,000+ applicants for a competitive AI fellowship focused on Python, machine learning fundamentals, real-world AI projects, and responsible AI practices.</li>
+          <li>Selected from 4,000+ applicants for Break Through Tech AI at Cornell Tech, working on applied machine learning, RAG, and agentic AI projects while evaluating model performance, identifying failure modes, and documenting technical findings.</li>
+          <li>Developed and evaluated a machine learning approach to predict Airbnb listing prices, comparing model results and using the problem context to understand where predictions were useful or needed improvement.</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="exp-item reveal">
+      <div class="exp-meta">
+        <div class="exp-date">2026 to Present</div>
+        <div class="exp-org">UC Irvine</div>
+        <div class="exp-type">Research</div>
+      </div>
+      <div>
+        <div class="exp-role">ReadWithUs Accessibility Research</div>
+        <ul class="exp-bullets">
+          <li>Contribute to HCI accessibility research focused on the reading experiences of blind and visually impaired users, researching National Federation of the Blind chapters across multiple states and identifying participants for qualitative interviews.</li>
         </ul>
       </div>
     </div>
@@ -639,10 +210,9 @@ footer {
         <div class="exp-type">Internship</div>
       </div>
       <div>
-        <div class="exp-role">Mentorship Intern</div>
+        <div class="exp-role">Business Operations Intern</div>
         <ul class="exp-bullets">
-          <li>Supported planning for mentorship programs and community-focused events, including meeting materials and program logistics.</li>
-          <li>Contributed ideas for board and general socials that foster community, and helped teams coordinate technical and non-technical projects.</li>
+          <li>Coordinated mentorship programming for 50+ students, organizing events, supporting outreach and promotion, and maintaining program documentation to improve student engagement and program operations.</li>
         </ul>
       </div>
     </div>
@@ -656,8 +226,8 @@ footer {
       <div>
         <div class="exp-role">STEM Navigator</div>
         <ul class="exp-bullets">
-          <li>Analyzed student engagement and participation to identify equity gaps and trends; contributed to outreach strategies that increased STEM participation.</li>
-          <li>Designed flyers, workshop slides, and outreach materials; organized academic opportunities and supported students with resources, tutoring, and community connections.</li>
+          <li>Analyzed engagement and participation data from 300+ students to identify gaps in STEM resource awareness and support data-informed outreach strategies.</li>
+          <li>Created outreach materials, workshop resources, and academic opportunity guides while connecting students with tutoring, STEM programs, and campus resources.</li>
         </ul>
       </div>
     </div>
@@ -674,14 +244,31 @@ footer {
   <div class="projects-grid">
 
     <div class="project-card reveal">
-      <div class="project-badge">🏆 Hackathon Winner · Oct 2025</div>
-      <h3 class="project-title">NeuroSwift AI: Stroke Intervention Assistant</h3>
+      <div class="project-badge">Personal Project · July 2026 to Present</div>
+      <h3 class="project-title">LogLens AI: AI-Powered Incident Investigation Platform</h3>
       <div class="project-tech">
-        <span class="tech-tag">Clinical AI</span>
-        <span class="tech-tag">Team Lead</span>
-        <span class="tech-tag">Sunstone × UCI</span>
+        <span class="tech-tag">FastAPI</span>
+        <span class="tech-tag">Python</span>
+        <span class="tech-tag">SQLAlchemy</span>
+        <span class="tech-tag">Docker</span>
+        <span class="tech-tag">RAG</span>
       </div>
-      <p class="project-desc">Led a 6-member team in developing and presenting an AI-driven concept for clot classification and retrieval guidance during stroke interventions, earning top recognition at the Sunstone x UCI Medical AI Challenge. </p>
+      <p class="project-desc">Built an AI-powered incident investigation platform using Python, FastAPI, SQLAlchemy, SQLite, Docker, and RAG. The platform lets users search technical documents, investigate incidents, and provide feedback. I also added semantic retrieval with vector embeddings so searches can find relevant information based on meaning instead of only keyword matches.</p>
+      <a href="https://github.com/waqara1-ui/knowledgehub-ai" target="_blank" class="project-link">View on GitHub →</a>
+    </div>
+
+    <div class="project-card reveal">
+      <div class="project-badge">Machine Learning · March 2026</div>
+      <h3 class="project-title">Healthcare Data Analysis &amp; ML Model Evaluation</h3>
+      <div class="project-tech">
+        <span class="tech-tag">Python</span>
+        <span class="tech-tag">NumPy</span>
+        <span class="tech-tag">Scikit-learn</span>
+        <span class="tech-tag">Model Evaluation</span>
+      </div>
+      <p class="project-desc">Analyzed patient data from 130 U.S. hospitals and evaluated neural network, KNN, linear regression, and decision tree models to compare predictive performance. Presented the results through visualizations and a technical report.</p>
+      <a href="https://github.com/KarenCC0415/CS178_Final_Project" target="_blank" class="project-link">View Repository →</a>
+      <a href="https://docs.google.com/document/d/1ClfMlVrebLuwXhLW5P8zhx9MNijAJ_XlQaq63UbmfHg/edit?usp=sharing" target="_blank" class="project-link" style="margin-left:1rem;">View Report →</a>
     </div>
 
     <div class="project-card reveal">
@@ -690,22 +277,10 @@ footer {
       <div class="project-tech">
         <span class="tech-tag">Python</span>
         <span class="tech-tag">BeautifulSoup</span>
-        <span class="tech-tag">Inverted Index</span>
+        <span class="tech-tag">Information Retrieval</span>
       </div>
-      <p class="project-desc">Built a scalable web crawler that processed thousands of webpages, extracting structured content and metadata. Implemented an inverted index with TF weighting and partial index merging for efficient large-scale search.</p>
+      <p class="project-desc">Developed a web crawler and parser that processed 50,000+ webpages, using URL normalization and content filtering to support efficient indexing and retrieval.</p>
       <a href="https://github.com/waqara1-ui/ics-crawler-project" target="_blank" class="project-link">View on GitHub →</a>
-    </div>
-
-    <div class="project-card reveal">
-      <div class="project-badge">Machine Learning · March 2026</div>
-      <h3 class="project-title">Diabetes Prediction &amp; ML Model Evaluation</h3>
-      <div class="project-tech">
-        <span class="tech-tag">Python</span>
-        <span class="tech-tag">Scikit-learn</span>
-        <span class="tech-tag">NumPy</span>
-        <span class="tech-tag">Neural Nets</span>
-      </div>
-      <p class="project-desc">Analyzed a diabetes dataset from UCI ML Repository, training and evaluating Neural Networks, KNN, Linear Regression, and Decision Trees to compare predictive performance across models. Results summarized in a technical report.</p>
     </div>
 
   </div>
@@ -754,13 +329,6 @@ footer {
   <span class="footer-note">UC Irvine · Computer Science · Intelligence Systems · 2027</span>
 </footer>
 
-<script>
-const observer = new IntersectionObserver((entries) => {
-  entries.forEach(entry => {
-    if (entry.isIntersecting) entry.target.classList.add('visible');
-  });
-}, { threshold: 0.1 });
-document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
-</script>
+<script src="js/script.js"></script>
 </body>
 </html>
